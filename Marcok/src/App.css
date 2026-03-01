@@ -1,0 +1,243 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-box {
+  width: 90%;
+  max-width: 1100px;
+  padding: 18px 40px;
+  border-radius: 20px;
+  background: #0a0a0a;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+/* LED NAVBAR */
+.nav-box::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, red, orange, yellow, orange, red);
+  background-size: 300% 300%;
+  animation: led 6s linear infinite;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: yellow;
+  text-shadow: 0 0 10px red;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: yellow;
+  text-shadow: 0 0 10px red;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 100vh;
+  padding-top: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+.avatar-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, red, orange, yellow, orange, red);
+  background-size: 300% 300%;
+  animation: led 4s linear infinite;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.title {
+  font-size: 70px;
+  color: yellow;
+  text-shadow: 0 0 25px red;
+}
+
+.description {
+  max-width: 600px;
+  font-size: 20px;
+  opacity: 0.85;
+}
+
+/* ================= RESEAUX ================= */
+
+.reseaux {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.reseaux h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: yellow;
+  text-shadow: 0 0 20px red;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 180px;
+  height: 180px;
+  background: #0a0a0a;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, red, orange, yellow, orange, red);
+  background-size: 300% 300%;
+  animation: led 4s linear infinite;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ================= LIVE ================= */
+
+.live {
+  padding: 80px 20px 120px 20px;
+  text-align: center;
+}
+
+.live h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: yellow;
+  text-shadow: 0 0 20px red;
+}
+
+.live-box {
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.live-box::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, red, orange, yellow, orange, red);
+  background-size: 300% 300%;
+  animation: led 5s linear infinite;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes led {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Empêche la navbar de cacher les sections */
+section {
+  scroll-margin-top: 150px;
+}

@@ -12,7 +12,7 @@ import { FaYoutube, FaTwitch, FaTiktok, FaTwitter } from "react-icons/fa"
 function App() {
   return (
     <>
-      {/* NAVBAR */}
+      {/* ================= NAVBAR ================= */}
       <nav className="navbar">
         <div className="nav-box">
           <div className="logo">Marcok</div>
@@ -27,7 +27,7 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section id="hero" className="hero">
         <div className="avatar-wrapper">
           <img src={Marcok} alt="Marcok" className="avatar" />
@@ -40,30 +40,30 @@ function App() {
         </p>
       </section>
 
-      {/* RESEAUX */}
+      {/* ================= RESEAUX ================= */}
       <section id="reseaux" className="reseaux">
         <h2>Mes Réseaux</h2>
 
         <div className="cards">
-          <a href="https://www.youtube.com/@marcoktwitch" className="card" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@marcoktwitch" target="_blank" rel="noopener noreferrer" className="card">
             <FaYoutube size={40}/> YouTube
           </a>
 
-          <a href="https://www.twitch.tv/marcok" className="card" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.twitch.tv/marcok" target="_blank" rel="noopener noreferrer" className="card">
             <FaTwitch size={40}/> Twitch
           </a>
 
-          <a href="https://www.tiktok.com/@marcokontwitch" className="card" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.tiktok.com/@marcokontwitch" target="_blank" rel="noopener noreferrer" className="card">
             <FaTiktok size={40}/> TikTok
           </a>
 
-          <a href="https://x.com/marcokttv" className="card" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/marcokttv" target="_blank" rel="noopener noreferrer" className="card">
             <FaTwitter size={40}/> Twitter
           </a>
         </div>
       </section>
 
-      {/* COLLAB */}
+      {/* ================= COLLAB ================= */}
       <section id="collab" className="collab">
         <h2>Mes Collaborations</h2>
 
@@ -96,7 +96,7 @@ function App() {
         </div>
       </section>
 
-      {/* CARRIERE */}
+      {/* ================= CARRIERE ================= */}
       <section id="carriere" className="carriere">
         <h2>Carrière</h2>
 
@@ -123,17 +123,15 @@ function App() {
         </div>
       </section>
 
-      {/* LIVE */}
+      {/* ================= LIVE ================= */}
       <section id="live" className="live">
         <h2>Live en cours</h2>
 
-        <div className="live-box">
+        <div className="live-wrapper">
           <iframe
-            src="https://player.twitch.tv/?channel=marcok&parent=https://marcok.vercel.app/"
-            height="450"
-            width="100%"
-            allowFullScreen>
-          </iframe>
+            src="https://player.twitch.tv/?channel=marcok&parent=marcok.vercel.app"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
     </>

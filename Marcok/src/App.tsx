@@ -64,22 +64,22 @@ function App() {
 
         <div className="carriere-cards">
 
-          <a href="https://twitter.com/FLC_Team" target="_blank" rel="noopener noreferrer" className="carriere-card">
+          <a href="https://x.com/FLCclan_" target="_blank" rel="noopener noreferrer" className="carriere-card">
             <img src={FLC} alt="FLC Logo" />
             <h3>FLC Clan</h3>
             <p>Directeur Web</p>
           </a>
 
-          <a href="https://twitter.com/2R_Team" target="_blank" rel="noopener noreferrer" className="carriere-card">
+          <a href="https://x.com/2R_Esport" target="_blank" rel="noopener noreferrer" className="carriere-card">
             <img src={TwoR} alt="2R Logo" />
             <h3>2R Esport</h3>
             <p>Directeur Web</p>
           </a>
 
-          <a href="https://twitter.com/1P_Team" target="_blank" rel="noopener noreferrer" className="carriere-card">
+          <a href="https://x.com/oneprodige" target="_blank" rel="noopener noreferrer" className="carriere-card">
             <img src={OneP} alt="1P Logo" />
             <h3>One Prodige</h3>
-            <p>Directeur Web</p>
+            <p>Directeur Web (actuel)</p>
           </a>
 
         </div>

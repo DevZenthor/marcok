@@ -295,3 +295,45 @@ section h2 {
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
+
+/* ================= CURSOR TRAIL ================= */
+
+.cursor-trail {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, yellow, red);
+  transform: translate(-50%, -50%);
+  animation: fadeOut 0.6s linear forwards;
+  z-index: 9999;
+  box-shadow: 0 0 10px yellow, 0 0 20px red;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+}
+
+/* ================= DISABLE TEXT INTERACTION ================= */
+
+/* Empêche sélection */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Empêche interaction souris sur textes */
+h1, h2, h3, p, span {
+  pointer-events: none;
+}
+
+/* MAIS on garde les liens cliquables */
+a {
+  pointer-events: auto;
+}

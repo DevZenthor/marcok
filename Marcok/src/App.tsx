@@ -1,4 +1,5 @@
 import "./App.css"
+import { useEffect, useState } from "react"
 import Marcok from "./assets/marcok.png"
 import FLC from "./assets/FLC.svg"
 import TwoR from "./assets/2R.svg"
@@ -10,8 +11,39 @@ import Novac from "./assets/novax.jpg"
 import { FaYoutube, FaTwitch, FaTiktok, FaTwitter } from "react-icons/fa"
 
 function App() {
+
+  /* ================= CURSOR TRAIL ================= */
+  const [trail, setTrail] = useState([])
+
+  useEffect(() => {
+    const move = (e) => {
+      const newDot = {
+        x: e.clientX,
+        y: e.clientY,
+        id: Date.now() + Math.random()
+      }
+
+      setTrail(prev => [...prev.slice(-20), newDot])
+    }
+
+    window.addEventListener("mousemove", move)
+    return () => window.removeEventListener("mousemove", move)
+  }, [])
+
   return (
     <>
+      {/* ================= TRAIL RENDER ================= */}
+      {trail.map(dot => (
+        <div
+          key={dot.id}
+          className="cursor-trail"
+          style={{ left: dot.x, top: dot.y }}
+        />
+      ))}
+
+      {/* ================= PARTICULES ================= */}
+      <div className="particles"></div>
+
       {/* ================= NAVBAR ================= */}
       <nav className="navbar">
         <div className="nav-box">
@@ -41,7 +73,7 @@ function App() {
       </section>
 
       {/* ================= RESEAUX ================= */}
-      <section id="reseaux" className="reseaux">
+      <section id="reseaux">
         <h2>Mes Réseaux</h2>
 
         <div className="cards">
@@ -64,7 +96,7 @@ function App() {
       </section>
 
       {/* ================= COLLAB ================= */}
-      <section id="collab" className="collab">
+      <section id="collab">
         <h2>Mes Collaborations</h2>
 
         <div className="collab-cards">
@@ -97,7 +129,7 @@ function App() {
       </section>
 
       {/* ================= CARRIERE ================= */}
-      <section id="carriere" className="carriere">
+      <section id="carriere">
         <h2>Carrière</h2>
 
         <div className="carriere-cards">
@@ -124,7 +156,7 @@ function App() {
       </section>
 
       {/* ================= LIVE ================= */}
-      <section id="live" className="live">
+      <section id="live">
         <h2>Live en cours</h2>
 
         <div className="live-wrapper">

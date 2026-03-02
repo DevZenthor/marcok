@@ -10,14 +10,23 @@ import Zuki from "./assets/zuki.jpg"
 import Novac from "./assets/novax.jpg"
 import { FaYoutube, FaTwitch, FaTiktok, FaTwitter } from "react-icons/fa"
 
+/* ================= TYPE TRAIL ================= */
+
+type TrailDot = {
+  x: number
+  y: number
+  id: number
+}
+
 function App() {
 
   /* ================= CURSOR TRAIL ================= */
-  const [trail, setTrail] = useState([])
+
+  const [trail, setTrail] = useState<TrailDot[]>([])
 
   useEffect(() => {
-    const move = (e) => {
-      const newDot = {
+    const move = (e: MouseEvent) => {
+      const newDot: TrailDot = {
         x: e.clientX,
         y: e.clientY,
         id: Date.now() + Math.random()
@@ -27,7 +36,10 @@ function App() {
     }
 
     window.addEventListener("mousemove", move)
-    return () => window.removeEventListener("mousemove", move)
+
+    return () => {
+      window.removeEventListener("mousemove", move)
+    }
   }, [])
 
   return (
@@ -40,9 +52,6 @@ function App() {
           style={{ left: dot.x, top: dot.y }}
         />
       ))}
-
-      {/* ================= PARTICULES ================= */}
-      <div className="particles"></div>
 
       {/* ================= NAVBAR ================= */}
       <nav className="navbar">
@@ -163,7 +172,7 @@ function App() {
           <iframe
             src="https://player.twitch.tv/?channel=marcok&parent=marcok.vercel.app"
             allowFullScreen
-          ></iframe>
+          />
         </div>
       </section>
     </>

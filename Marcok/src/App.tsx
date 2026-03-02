@@ -130,7 +130,7 @@ function App() {
 
           <a href="https://x.com/novax7q" target="_blank" rel="noopener noreferrer" className="collab-card">
             <img src={Novac} alt="Novac" />
-            <h3>Novac</h3>
+            <h3>Novax</h3>
             <span className="status">F/A</span>
           </a>
         </div>

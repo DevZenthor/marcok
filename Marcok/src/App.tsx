@@ -129,7 +129,7 @@ function App() {
 
         <div className="live-box">
           <iframe
-            src="https://player.twitch.tv/?channel=marcok&parent=localhost"
+            src="https://player.twitch.tv/?channel=marcok&parent=https://marcok.vercel.app/"
             height="450"
             width="100%"
             allowFullScreen>

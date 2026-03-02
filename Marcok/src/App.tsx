@@ -4,6 +4,7 @@ import Marcok from "./assets/marcok.png"
 import FLC from "./assets/FLC.svg"
 import TwoR from "./assets/2R.svg"
 import OneP from "./assets/1P.svg"
+import MZ from "./assets/MZ.svg"
 import Dreyqan from "./assets/dreyqan.jpg"
 import Baki from "./assets/baki.jpg"
 import Zuki from "./assets/zuki.jpg"
@@ -109,7 +110,6 @@ function App() {
         <h2>Mes Collaborations</h2>
 
         <div className="collab-cards">
-
           <a href="https://x.com/dreyqan" target="_blank" rel="noopener noreferrer" className="collab-card">
             <img src={Dreyqan} alt="Dreyqan" />
             <h3>Dreyqan</h3>
@@ -133,7 +133,6 @@ function App() {
             <h3>Novac</h3>
             <span className="status">F/A</span>
           </a>
-
         </div>
       </section>
 
@@ -156,9 +155,15 @@ function App() {
           </a>
 
           <a href="https://x.com/oneprodige" target="_blank" rel="noopener noreferrer" className="carriere-card">
-            <img src={OneP} alt="1P Logo" />
+            <img src={OneP} alt="One Prodige Logo" />
             <h3>One Prodige</h3>
-            <p>Directeur Web (actuel)</p>
+            <p>Directeur Général (actuel)</p>
+          </a>
+
+            <a href="https://x.com/MZ_AGENCY" target="_blank" rel="noopener noreferrer" className="carriere-card">
+            <img src={MZ} alt="MZ Agency Logo" />
+            <h3>MZ Agency</h3>
+            <p>Owner</p>
           </a>
 
         </div>

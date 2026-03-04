@@ -118,8 +118,8 @@ function App() {
 
           <a href="https://x.com/coach_baki" target="_blank" rel="noopener noreferrer" className="collab-card">
             <img src={Baki} alt="Baki" />
-            <h3>Baki</h3>
-            <span className="status">F/A</span>
+            <h3>Coach Baki</h3>
+            <span className="status">Kataktis eSport</span>
           </a>
 
           <a href="https://x.com/VZuki_1" target="_blank" rel="noopener noreferrer" className="collab-card">

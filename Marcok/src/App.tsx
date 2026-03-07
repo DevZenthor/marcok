@@ -1,17 +1,20 @@
 import "./App.css"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
+
 import Marcok from "./assets/marcok.png"
 import FLC from "./assets/FLC.svg"
 import TwoR from "./assets/2R.svg"
 import OneP from "./assets/1P.svg"
 import MZ from "./assets/MZ.svg"
+
 import Dreyqan from "./assets/dreyqan.jpg"
 import Baki from "./assets/baki.jpg"
 import Zuki from "./assets/zuki.jpg"
 import Novac from "./assets/novax.jpg"
-import { FaYoutube, FaTwitch, FaTiktok, FaTwitter } from "react-icons/fa"
 
-/* ================= TYPE TRAIL ================= */
+import Music from "./assets/music.mp4"
+
+import { FaYoutube, FaTwitch, FaTiktok, FaTwitter } from "react-icons/fa"
 
 type TrailDot = {
   x: number
@@ -21,11 +24,12 @@ type TrailDot = {
 
 function App() {
 
-  /* ================= CURSOR TRAIL ================= */
-
   const [trail, setTrail] = useState<TrailDot[]>([])
 
+  const audioRef = useRef<HTMLAudioElement>(null)
+
   useEffect(() => {
+
     const move = (e: MouseEvent) => {
       const newDot: TrailDot = {
         x: e.clientX,
@@ -38,14 +42,27 @@ function App() {
 
     window.addEventListener("mousemove", move)
 
+    if (audioRef.current) {
+      audioRef.current.volume = 0.2
+    }
+
     return () => {
       window.removeEventListener("mousemove", move)
     }
+
   }, [])
 
   return (
     <>
-      {/* ================= TRAIL RENDER ================= */}
+
+      {/* MUSIQUE */}
+
+      <audio ref={audioRef} autoPlay loop>
+        <source src={Music} type="audio/mpeg" />
+      </audio>
+
+      {/* CURSOR TRAIL */}
+
       {trail.map(dot => (
         <div
           key={dot.id}
@@ -54,9 +71,11 @@ function App() {
         />
       ))}
 
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
+
       <nav className="navbar">
         <div className="nav-box">
+
           <div className="logo">Marcok</div>
 
           <ul className="nav-links">
@@ -66,11 +85,14 @@ function App() {
             <li><a href="#carriere">Carrière</a></li>
             <li><a href="#live">Live</a></li>
           </ul>
+
         </div>
       </nav>
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
+
       <section id="hero" className="hero">
+
         <div className="avatar-wrapper">
           <img src={Marcok} alt="Marcok" className="avatar" />
         </div>
@@ -80,13 +102,17 @@ function App() {
         <p className="description">
           Streamer passionné, Manager stratégique et Directeur Général de One Prodige.
         </p>
+
       </section>
 
-      {/* ================= RESEAUX ================= */}
+      {/* RESEAUX */}
+
       <section id="reseaux">
+
         <h2>Mes Réseaux</h2>
 
         <div className="cards">
+
           <a href="https://www.youtube.com/@marcoktwitch" target="_blank" rel="noopener noreferrer" className="card">
             <FaYoutube size={40}/> YouTube
           </a>
@@ -102,14 +128,19 @@ function App() {
           <a href="https://x.com/marcokttv" target="_blank" rel="noopener noreferrer" className="card">
             <FaTwitter size={40}/> Twitter
           </a>
+
         </div>
+
       </section>
 
-      {/* ================= COLLAB ================= */}
+      {/* COLLAB */}
+
       <section id="collab">
+
         <h2>Mes Collaborations</h2>
 
         <div className="collab-cards">
+
           <a href="https://x.com/dreyqan" target="_blank" rel="noopener noreferrer" className="collab-card">
             <img src={Dreyqan} alt="Dreyqan" />
             <h3>Dreyqan</h3>
@@ -133,11 +164,15 @@ function App() {
             <h3>Novax</h3>
             <span className="status">F/A</span>
           </a>
+
         </div>
+
       </section>
 
-      {/* ================= CARRIERE ================= */}
+      {/* CARRIERE */}
+
       <section id="carriere">
+
         <h2>Carrière</h2>
 
         <div className="carriere-cards">
@@ -160,26 +195,33 @@ function App() {
             <p>Directeur Général (actuel)</p>
           </a>
 
-            <a href="https://x.com/MZ_AGENCY" target="_blank" rel="noopener noreferrer" className="carriere-card">
+          <a href="https://x.com/MZ_AGENCY" target="_blank" rel="noopener noreferrer" className="carriere-card">
             <img src={MZ} alt="MZ Agency Logo" />
             <h3>MZ Agency</h3>
             <p>Owner</p>
           </a>
 
         </div>
+
       </section>
 
-      {/* ================= LIVE ================= */}
+      {/* LIVE */}
+
       <section id="live">
+
         <h2>Live en cours</h2>
 
         <div className="live-wrapper">
+
           <iframe
             src="https://player.twitch.tv/?channel=marcok&parent=marcok.vercel.app"
             allowFullScreen
           />
+
         </div>
+
       </section>
+
     </>
   )
 }

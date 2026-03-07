@@ -16,6 +16,8 @@ import Music from "./assets/music.mp4"
 
 import { FaYoutube, FaTwitch, FaTiktok, FaTwitter } from "react-icons/fa"
 
+/* ================= TYPE TRAIL ================= */
+
 type TrailDot = {
   x: number
   y: number
@@ -24,12 +26,11 @@ type TrailDot = {
 
 function App() {
 
+  /* ================= CURSOR TRAIL ================= */
+
   const [trail, setTrail] = useState<TrailDot[]>([])
 
-  const audioRef = useRef<HTMLAudioElement>(null)
-
   useEffect(() => {
-
     const move = (e: MouseEvent) => {
       const newDot: TrailDot = {
         x: e.clientX,
@@ -42,26 +43,46 @@ function App() {
 
     window.addEventListener("mousemove", move)
 
-    if (audioRef.current) {
-      audioRef.current.volume = 0.2
-    }
-
     return () => {
       window.removeEventListener("mousemove", move)
     }
-
   }, [])
+
+  /* ================= MUSIC ================= */
+
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const [started, setStarted] = useState(false)
+
+  useEffect(() => {
+
+    const startMusic = () => {
+
+      if (!started && audioRef.current) {
+        audioRef.current.volume = 0.2
+        audioRef.current.play()
+        setStarted(true)
+      }
+
+    }
+
+    window.addEventListener("click", startMusic)
+
+    return () => {
+      window.removeEventListener("click", startMusic)
+    }
+
+  }, [started])
 
   return (
     <>
 
-      {/* MUSIQUE */}
+      {/* ================= AUDIO ================= */}
 
-      <audio ref={audioRef} autoPlay loop>
+      <audio ref={audioRef} loop>
         <source src={Music} type="audio/mpeg" />
       </audio>
 
-      {/* CURSOR TRAIL */}
+      {/* ================= TRAIL ================= */}
 
       {trail.map(dot => (
         <div
@@ -71,7 +92,7 @@ function App() {
         />
       ))}
 
-      {/* NAVBAR */}
+      {/* ================= NAVBAR ================= */}
 
       <nav className="navbar">
         <div className="nav-box">
@@ -89,7 +110,7 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
 
       <section id="hero" className="hero">
 
@@ -105,7 +126,7 @@ function App() {
 
       </section>
 
-      {/* RESEAUX */}
+      {/* ================= RESEAUX ================= */}
 
       <section id="reseaux">
 
@@ -133,7 +154,7 @@ function App() {
 
       </section>
 
-      {/* COLLAB */}
+      {/* ================= COLLAB ================= */}
 
       <section id="collab">
 
@@ -169,7 +190,7 @@ function App() {
 
       </section>
 
-      {/* CARRIERE */}
+      {/* ================= CARRIERE ================= */}
 
       <section id="carriere">
 
@@ -205,7 +226,7 @@ function App() {
 
       </section>
 
-      {/* LIVE */}
+      {/* ================= LIVE ================= */}
 
       <section id="live">
 

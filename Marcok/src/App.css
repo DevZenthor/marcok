@@ -195,8 +195,6 @@ section h2 {
   opacity: 1;
 }
 
-/* Images */
-
 .collab-card img {
   width: 110px;
   height: 110px;
@@ -320,7 +318,7 @@ section h2 {
 
 /* ================= DISABLE TEXT INTERACTION ================= */
 
-/* Empêche sélection */
+
 body {
   user-select: none;
   -webkit-user-select: none;
@@ -328,12 +326,12 @@ body {
   -ms-user-select: none;
 }
 
-/* Empêche interaction souris sur textes */
+
 h1, h2, h3, p, span {
   pointer-events: none;
 }
 
-/* MAIS on garde les liens cliquables */
+
 a {
   pointer-events: auto;
 }

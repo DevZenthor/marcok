@@ -8,9 +8,10 @@ import OneP from "./assets/1P.svg"
 import MZ from "./assets/MZ.svg"
 
 import Dreyqan from "./assets/dreyqan.jpg"
-import Baki from "./assets/baki.jpg"
 import Zuki from "./assets/zuki.jpg"
 import Novac from "./assets/novax.jpg"
+import Alon from "./assets/alon.jpg"
+
 
 import Music from "./assets/music.mp4"
 
@@ -168,10 +169,10 @@ function App() {
             <span className="status">F/A</span>
           </a>
 
-          <a href="https://x.com/coach_baki" target="_blank" rel="noopener noreferrer" className="collab-card">
-            <img src={Baki} alt="Baki" />
-            <h3>Coach Baki</h3>
-            <span className="status">Kataktis eSport</span>
+          <a href="https://x.com/alonfv1" target="_blank" rel="noopener noreferrer" className="collab-card">
+            <img src={Alon} alt="Alon" />
+            <h3>Alon</h3>
+            <span className="status">F/A</span>
           </a>
 
           <a href="https://x.com/VZuki_1" target="_blank" rel="noopener noreferrer" className="collab-card">
